@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+
+	<meta name="description" content="BitcoinN mining in the browser. offers an easy miner integration into your website with low fees.">
+	<meta name="keywords" content="BitcoinN, Monero, Aeon, Browser, Mining, CoinHive, Alternative">
+	
+	<title>Mine BitcoinN in your browser</title>
+	<link href="./webminer/w3.css" rel="stylesheet">
+	<link href="./webminer/style.css?v=2.0" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content modal-body">
+			<span class="close">&times;</span>
+			
+
+ <!-- Tab links -->
+ <div class="tab">
+	<button class="tablinks" onclick="openTab(event, 'tabaa')"id="defaultOpen">General</button>
+	<button class="tablinks" onclick="openTab(event, 'tabbb')">Frequently Asked Questions</button>
+	<button class="tablinks" onclick="openTab(event, 'tabcc')">Miner SDK</button>
+  </div>
+ 
+
+  <!-- Tab content -->
+ 
+  <div id="tabaa" class="tabcontent">
+		
+				<div align="right">
+							Want to mine BTN?   <a href="https://bitcoinn.biz/">bitcoinn.biz</a></p>
+						</div>
+		
+			<p class="w3-xlarge">What is new?</p>
+
+			<p class="w3-large">V1.5 January 20, 2018</p>
+			
+							<ul>
+								<li>Huge speed improvements for the Aeon miner.</li>
+							</ul>
+							
+		
+						<p class="w3-large">V1.4 January 16, 2018</p>
+		
+						<ul>
+							<li>More URL parameters available, see <a href="xx">this example</a>.
+							More details in the downloadable SDK.</li>
+							<li>SDK updates. LoginId support.</li>
+						</ul>
+						
+						<p class="w3-large">V1.3 December 31, 2017</p>
+						
+						<ul>
+							<li><b>Massive</b> server side improvements. </li>
+							<ul>
+								<li>Bug fixes which affect the stability and speed.</li>
+								<li>Miners with the same address and pool get bundled, i.e. only
+									one connection is seen by the pool.
+								</li>
+							</ul>
+							<li>All mining scripts are merged into one. That improves performance 
+								but also allows to simply start mining on your own webpage with just 
+							a single line of code. </li>
+							<li>Automatic detection of the number of CPUs available.</li>
+							<li>Easy to use throttling system, preventing 100% CPU usage. </li>
+						</ul>
+		
+						
+						<p class="w3-large">V1.2 November 10, 2017</p>
+						
+						<ul>
+							<li>Updated the simple miner code. A custom user-id can be used to check the amount of work done by a client. See "How to put a webminer on your website" below.</li>
+						</ul>
+						
+						
+						<p class="w3-large">V1.1 October 24, 2017</p>
+						
+						<ul>
+							<li>Send users to your specified pool/address using parameters. Example:  <a href="xx">click here</a>.</li>
+							<li>Message loop bug fix. No more rejected jobs after long mining sessions.</li>
+						</ul>
+						
+						<p class="w3-large">V1.0 October 17, 2017</p>
+						
+						<ul>
+							<li>"Expired shares" bug fixed.</li>
+							<li>Https support. The connection with webminerpool.com is now encrypted.</li>
+							<li>Added auto-reconnect functionality.</li>
+						</ul>
+		
+		
+		  </div>
+		  
+		  <div id="tabbb" class="tabcontent">
+			<p class="w3-xlarge">Frequently Asked Questions</p>
+			
+								<p class="question">How do I start?</p>
+								<p class="answer">Enter a Monero/Aeon address and select a pool. Click "Start mining".</p>
+			
+								<p class="question">Where do I get a Monero/Aeon address?</p>
+								<p class="answer"> You can easily create a new address at  <a href="http://www.moneroaddress.org">moneroaddress.org</a>. </p>
+			
+								<p class="question">How does it work?</p>
+								<p class="answer">Your browser is mining Monero/Aeon. It has to solve "jobs". Solved jobs are transmitted to the selected pool. Visit the pool
+									website to see how much you have earned.</p>
+			
+								<p class="question">Something is not working!</p>
+								<p class="answer">Update your browser and try again. If the problem persists contact us.</p>
+		
+								<p class="question">How much of my hashrate do you keep?</p>
+								<p class="answer">3 %. With more users the fee will get lower.</p>
+			
+								<p class="question">Can you add my pool?</p>
+								<p class="answer">Yes. It has to be active for some time and have a certain hash rate. Please contact us.</p>
+			
+			
+			
+								<p class="question">Where can I donate?</p>
+								<div class="flexrowfill answer">
+										<div class="flexitemleft">Thank You. Use this XMR address: <br><br> 422QQNhnhX8hmMEkF3TWePWSvKm6DiV7sS3Za2dXrynsJ1w8U6AzwjEdnewdhmP3CDaqvaS6BjEjGMK9mnumtufvLmz5HJi <br><br> 
+											Or this AEON address:<br><br>  Wms2toCUoSrVCcSv1EbxyT7DitoruPGM5ZF2zXmkF5bSRhgtJJMRweBiuBrfnzC3oP76BW5GPumJvDKzmie97kRS28kJYXtA7
+											</div> 
+										<img class="flexitemright" src="../qrcode.png" alt=""" style="width:120px;height:120px;">
+								</div>
+			
+		  </div>
+
+		  
+		  <div id="tabcc" class="tabcontent">
+			<p class="w3-xlarge">Mining on your website</p>
+			
+			
+						
+						<p>
+						
+						If you own a website you can use the webminerpool SDK to put a custom
+						miner on your site. Remember to stay fair and acknowledge the use of a miner and/or throttle the miner.</p>
+						
+			
+			
+			<a class="w3-button w3-orange w3-hover-white" href="../webminerpoolSDK.zip">Download the SDK</a>
+			
+					
+								<p class="w3-xlarge">Contact</p>
+								
+								<p>Drop us an
+								<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#119;&#101;&#98;&#109;&#105;&#110;&#101;&#114;&#112;&#111;&#111;&#108;&#64;&#112;&#114;&#111;&#116;&#111;&#110;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">email</a>.
+								</p>
+			
+			
+		  </div> 
+		
+
+		
+				</div>
+			</div>
+
+
+
+	<!-- HEADER -->
+	<header>
+			<div class="pulse-button" id="myBtn"></div>
+	</header>
+
+	<main>
+		<!-- MAIN -->
+		<div class="allSides">
+			<img src="./webminer/miner.png" alt="minerpng">
+
+			<!-- BITCOINN ADDRESS -->
+			<div class="text-input" id="btnaddress">
+				<input type="text" id="bitcoinnaddress" placeholder="Your BitcoinN address goes here" name="btnAddress" ></input>
+				<label for="bitcoinnaddress">
+					<i class="fa fa-paper-plane-o"></i>
+					BTN
+				</label>
+			</div>
+
+			<!-- SELECT POOL -->
+			<label id="poolselector" class="field" for="img_category" data-value="">
+				<span id="pooltext">
+					<i class="fa fa-bank ">&thinsp;</i>
+					Select a pool
+				</span>
+				<div id="img_category" class="psuedo_select" name="img_category">
+					<span class="selected" id="selectedpool"></span>
+					<ul id="img_category_options" class="options">
+						<li class="option">pool.bitcoinn.biz</li>
+						<li class="option">bitcoinn.multipool.es</li>
+						<li class="option">bitcoinn.criptominando.eu</li>
+					</ul>
+				</div>
+			</label>
+
+			<!-- START MINING -->
+			<button class="button darkbutton" id="startbutton">Start mining</button>
+
+		</div>
+	</main>
+
+
+	<!-- FOOTER -->
+	<footer>
+
+		<div id="minerout" class="outerrow">
+			<textarea class="logarea" id="logger"></textarea>
+			<div class="flexrow">
+				<figure style="overflow:visible;" id="spinners">
+					<div id="spinner" class="spin"></div>
+				</figure>
+				<div class="flexrow">
+					<div class="flexcol">
+						<div class="item">
+							<i class=" 	fa fa-server"></i>
+						</div>
+						<div class="item">
+							<i id="reconnect_icon" class="fa fa-microchip"></i>
+						</div>
+
+						<div class="item">
+							<i class=" 	fa fa-rocket"></i>
+						</div>
+						<div class="item">
+							<i class=" 	fa fa-dashboard"></i>
+						</div>
+					</div>
+					<div class="flexcol2">
+						
+						<div class="item" id="statustext">DISCONNECTED</div>
+						
+										<div class="item">
+							<span type="text" name="something" id="numspin">1</span>
+							<span class="plusminus" id="spinup">+</span>
+							<span>/</span>
+							<span class="plusminus" id="spindo">-</span>
+							<span>THREADS</span>
+						</div>
+					
+												<div class="slidecontainer flexrow2">
+												<div class="flexrow2">THROTTLE</div> 
+												<input type="range" min="0" max="100" value="0" class="slider" id="throttler">
+</div>
+<!-- 						<div class="item showpointer" id="reconnect_text">AUTO-RECONNECT</div> -->
+		
+						<div class="item" id="speed">0 H/S</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+
+
+
+	<script src="./webminer/dropdown.js"></script>
+	
+	<script src="./webminer/tab.js"></script>
+
+
+	<script>
+
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks the button, open the modal 
+		btn.onclick = function () {
+			modal.style.display = "block";
+			pulsateInfo(false);
+		}
+
+		document.getElementById("defaultOpen").click();
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+
+		}
+	</script>
+
+	<!-- thats it -->
+    <script src="./webminer/webmr.js?v=2.0"></script>
+
+	<script>
+	
+	     function qs(search_for) {
+		var query = window.location.search.substring(1);
+		var parms = query.split('&');
+		for (var i=0; i<parms.length; i++) {
+			var pos = parms[i].indexOf('=');
+			if (pos > 0  && search_for == parms[i].substring(0,pos)) {
+				return parms[i].substring(pos+1);;
+			}
+		}
+		return "";
+	}
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			var expires = "expires=" + d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+	</script>
+
+	<script>
+
+		var elem_a = document.getElementById("poolselector");
+		var elem_b = document.getElementById("btnaddress");
+		var elem_c = document.getElementById("minerout");
+		var elem_d = document.getElementById("startbutton");
+		var elem_e = document.getElementById("bitcoinnaddress");
+		var elem_f = document.getElementById("selectedpool"); 
+		var elem_g = document.getElementById("numspin");
+		var elem_h = document.getElementById("statustext");
+		var elem_i = document.getElementById("speed");
+		var elem_j = document.getElementById("spinner");
+		var elem_k = document.getElementById("logger");
+		var elem_l = document.getElementById("spinup");
+		var elem_m = document.getElementById("spindo");
+		var elem_n = document.getElementById("throttler");
+		var elem_o = document.getElementById("myBtn");
+		var elem_p = document.getElementById("pooltext");
+
+		var lastrate = 0;
+
+		var isMinerEnabled = false;
+		var lastrate = 0;
+	
+		var neverunlockpool = false;
+		var neverunlockaddr = false;
+		
+		var userpassword = "";
+		var userthreads = -1;
+		var autostart=false;
+
+		if(qs("pool")!="") {elem_p.lastChild.data = qs("pool"); 
+		elem_f.textContent = qs("pool"); 
+		neverunlockpool=true;			
+		elem_a.style.pointerEvents = "none";}
+		
+		if(qs("threads")!="") {userthreads = qs("threads"); }
+		if(qs("password")!="") {userpassword = qs("password"); }
+		if(qs("autostart")=="true") {autostart = true; }
+		if(qs("throttle")!="") { throttleMiner =  parseInt(qs("throttle"));  }
+
+		
+		if(qs("address")!="") {elem_e.value = qs("address"); 
+		neverunlockaddr=true;
+		elem_e.disabled = true;}
+		else {
+		try { elem_e.value = getCookie("btnaddress"); } catch (e) { }}
+		
+		
+		
+		elem_n.addEventListener('mouseup', function() {
+		 throttleMiner = this.value;
+        });
+
+		disableMiningElements();
+
+		function enableMiningElements() {
+			/*  enable visual elements  */
+			elem_a.style.pointerEvents = "none";
+			elem_e.disabled = true;
+			elem_d.textContent = "STOP";
+			elem_h.textContent = "CONNECTING";
+			elem_c.style.visibility = "visible";
+			elem_g.textContent = workers.length;
+			elem_k.value = "";
+			elem_n.value=throttleMiner;
+		}
+
+		function disableMiningElements() {
+			/*  disable visual elements  */
+			if(!neverunlockpool) elem_a.style.pointerEvents = "auto";
+			if(!neverunlockaddr) elem_e.disabled = false;
+			elem_c.style.visibility = "collapse";
+			elem_d.textContent = "START MINING";
+			elem_k.value = "";
+		}
+
+		function pulsateInfo(pulsate)
+		{
+			if (pulsate && !elem_o.classList.contains("pulse-animate"))
+			elem_o.classList.add("pulse-animate");
+
+			if (!pulsate && elem_o.classList.contains("pulse-animate"))
+			elem_o.classList.remove("pulse-animate");
+		}
+
+
+		pulsateInfo(true);
+		
+		
+
+		function addText(obj) {
+			if (elem_k.value != "") elem_k.value += "\n";
+
+			elem_k.value += "[" + new Date().toLocaleString() + "] ";
+
+			if (obj.identifier === "job")
+				elem_k.value += "new job: " + obj.job_id;
+			else if (obj.identifier === "solved")
+				elem_k.value += "solved job: " + obj.job_id;
+			else if (obj.identifier === "hashsolved")
+				elem_k.value += "pool accepted hash!";
+			else if (obj.identifier === "error")
+				elem_k.value += "error: " + obj.param;
+
+			elem_k.scrollTop = elem_k.scrollHeight;
+		}
+
+		setInterval(
+			function () {
+			
+			    if (!isMinerEnabled) return;
+			        
+				lastrate = ((totalhashes / 2) * 0.5 + lastrate * 0.5);
+				elem_i.textContent = Math.round(lastrate) + " H/S";
+				totalhashes = 0;
+
+				if (connected === 0) elem_h.textContent = "CONNECTING";
+				if (connected === 1) { elem_h.textContent = "CONNECTED"; connecttry=0; }
+				if (connected === 2) elem_h.textContent = "DISCONNECTED";
+
+				if (connected < 2) {
+					if (!elem_j.classList.contains("spinning"))
+						elem_j.classList.add("spinning");
+				}
+				else {
+					if (elem_j.classList.contains("spinning"))
+						elem_j.classList.remove("spinning");
+				}
+
+				while (sendStack.length > 0) addText((sendStack.shift()));
+				while (receiveStack.length > 0) addText((receiveStack.shift()));
+				
+			},
+			2000);
+			
+		function checkInput() {
+			if (elem_f.textContent == "") {
+				alert("Please select a pool.");
+				return false;
+			}
+
+			var patt = new RegExp(/[a-zA-Z|\d]{94}/);
+			if (!patt.test(elem_e.value)) {
+				alert("Please input a valid BTN address.");
+				return false;
+			}
+
+			try {
+				setCookie("btnaddress", elem_e.value, 365);
+			} catch (e) { }
+
+			return true;
+		}
+
+		elem_l.onclick = function () {
+			addWorker();
+			elem_g.textContent = workers.length;
+		}
+
+		elem_m.onclick = function () {
+			removeWorker();
+			elem_g.textContent = workers.length;
+		}
+
+		var startit = function () {
+
+			elem_d.disabled = true;
+
+			if (isMinerEnabled) {
+
+				disableMiningElements();
+
+				stopMining();
+
+				isMinerEnabled = false;
+			}
+			else {
+				if (checkInput()) {
+
+					startMining(elem_f.textContent, elem_e.value, userpassword,userthreads);
+					
+					elem_n.value = 0;
+					
+					isMinerEnabled = true;
+
+					enableMiningElements();
+
+				}
+			}
+
+			elem_d.disabled = false;
+		}
+		
+		elem_d.onclick = startit;
+		
+		if(autostart==true) startit();
+
+
+	</script>
+</body>
+
+</html>
